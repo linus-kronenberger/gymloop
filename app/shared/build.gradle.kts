@@ -6,6 +6,7 @@ plugins {
     alias(libs.plugins.androidMultiplatformLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -50,6 +51,7 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
+            implementation(libs.ktor.clientAndroid)
         }
         commonMain.dependencies {
             api(project(":core"))
@@ -61,12 +63,26 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.kotlinx.datetime)
+            implementation(libs.kotlinx.serializationJson)
+            implementation(libs.kotlinx.coroutinesCore)
+            implementation(libs.ktor.clientCore)
+            implementation(libs.ktor.clientContentNegotiation)
+            implementation(libs.ktor.serializationKotlinxJson)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+            implementation(libs.kotlinx.coroutinesTest)
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.clientDarwin)
         }
         jsMain.dependencies {
             implementation(libs.wrappers.browser)
+            implementation(libs.ktor.clientJs)
+        }
+        wasmJsMain.dependencies {
+            implementation(libs.ktor.clientJs)
         }
         getByName("androidDeviceTest").dependencies {
             implementation(libs.androidx.testRunner)
