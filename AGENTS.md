@@ -46,7 +46,7 @@ Fachlicher Kern:
 - **API-Vertrag**: Klare, versionierbare DTO-Grenzen zwischen `:server` und den Clients; Domain-Objekte niemals direkt als DB-Tabellen oder Wire-DTOs missbrauchen.
 
 ### 5. Git & Commit-Konventionen
-- **Conventional Commits mit großgeschriebenem ersten Buchstaben**: Alle Commit-Nachrichten folgen dem Format `<Type>(<optional scope>): <Beschreibung>` mit großgeschriebenem Anfangsbuchstaben (z. B. `Feat: Add exercise domain model`, `Fix: Correct progress trend calculation`, `Docs: Update AGENTS.md`, `Refactor: Extract repository interface`, `Chore: Update dependencies`).
+- **Conventional Commits (Typ klein, Beschreibung groß)**: Alle Commit-Nachrichten folgen dem Format `<type>(<optional scope>): <Beschreibung>` mit **kleingeschriebenem Typ** am Anfang und **großgeschriebenem Anfangsbuchstaben der Beschreibung** (z. B. `feat: Add exercise domain model`, `fix: Correct progress trend calculation`, `docs: Update AGENTS.md`, `refactor: Extract repository interface`, `chore: Update dependencies`).
 - **Kein direkter Push auf `main`**: **NIEMALS** direkt auf `main` committen oder pushen.
 - **Branch-Namenskonvention**: Für jede Aufgabe immer einen neuen Branch mit passendem Präfix erstellen (`feat/<kurzname>`, `fix/<kurzname>`, `chore/<kurzname>`).
 - **Git Worktree für parallele Entwicklung**: Für jede Entwicklungsaufgabe immer einen eigenen `git worktree` öffnen (z. B. `git worktree add ../gymloop-<branch> -b feat/<kurzname>`), damit parallel gearbeitet werden kann.
