@@ -51,9 +51,10 @@ Fachlicher Kern:
 - **Branch-Namenskonvention**: Für jede Aufgabe immer einen neuen Branch mit passendem Präfix erstellen (`feat/<kurzname>`, `fix/<kurzname>`, `chore/<kurzname>`).
 - **Git Worktree für parallele Entwicklung**: Für jede Entwicklungsaufgabe immer einen eigenen `git worktree` öffnen (z. B. `git worktree add ../gymloop-<branch> -b feat/<kurzname>`), damit parallel gearbeitet werden kann.
 - **Draft PR & Self-Review Workflow**:
-  1. Nach dem ersten Push des Feature-/Fix-/Chore-Branches einen **Draft PR** gegen `main` erstellen.
-  2. Nach Abschluss der Implementierung und Tests ein **eigenes Review** (Code-Qualität, DDD, Responsivität, Tests) durchführen.
-  3. Erst nach erfolgreichem Self-Review den PR von *Draft* auf **Ready for Review** freischalten, sodass der User ihn händisch prüfen und mergen kann.
+  1. Bei einem Feature-Request vorab ein geeignetes **GitHub Issue** anlegen (z. B. via `gh issue create`) und dieses im PR verlinken (`Closes #<nr>` / `Refs #<nr>`).
+  2. Nach dem ersten Push des Feature-/Fix-/Chore-Branches einen **Draft PR** gegen `main` erstellen.
+  3. Nach Abschluss der Implementierung und Tests ein **eigenes Review** (Code-Qualität, DDD, Responsivität, Tests) durchführen.
+  4. Erst nach erfolgreichem Self-Review den PR von *Draft* auf **Ready for Review** freischalten, sodass der User ihn händisch prüfen und mergen kann.
 
 ---
 
