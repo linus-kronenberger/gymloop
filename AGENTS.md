@@ -45,6 +45,9 @@ Fachlicher Kern:
 - **Persistenz**: Alle Übungen und Rekord-Zeitreihen werden sauber relational in PostgreSQL gespeichert (inkl. Zeitstempel für die Verlaufsauswertung).
 - **API-Vertrag**: Klare, versionierbare DTO-Grenzen zwischen `:server` und den Clients; Domain-Objekte niemals direkt als DB-Tabellen oder Wire-DTOs missbrauchen.
 
+### 5. Git & Commit-Konventionen
+- **Conventional Commits mit großgeschriebenem ersten Buchstaben**: Alle Commit-Nachrichten folgen dem Format `<Type>(<optional scope>): <Beschreibung>` mit großgeschriebenem Anfangsbuchstaben (z. B. `Feat: Add exercise domain model`, `Fix: Correct progress trend calculation`, `Docs: Update AGENTS.md`, `Refactor: Extract repository interface`, `Chore: Update dependencies`).
+
 ---
 
 ## Wichtige Befehle
