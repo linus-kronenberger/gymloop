@@ -30,6 +30,9 @@ Fachlicher Kern:
   - *Infrastructure*: PostgreSQL-Repositories (`:server`) und API-Clients implementieren Domain-Interfaces.
   - *Presentation*: Compose-UI und ViewModels/State-Holder konsumieren nur Application-/Domain-Modelle.
 - **Ubiquitous Language**: Verwende durchgängig konsistente, fachliche Begriffe in Code, API und UI.
+- **Kein Primitive Obsession / Keine Anemic Models**: Fachliche Werte (`WeightKg`, `Repetitions`, `ExerciseId`, `ExerciseName`) als typisierte Value Objects (`value class`) mit Validierung im `init`-Block modellieren – keine rohen `Double`/`Int`/`String`-Werte in der Domäne. Fachlogik (z. B. Trendvergleich *besser/gleich/schlechter*) gehört direkt an Entities/Domain Services, nicht in `ViewModel` oder Server-Routen.
+- **Aggregate-Grenzen schützen**: Zustandsänderungen (z. B. neuen Rekord erfassen) laufen über das Aggregate Root bzw. klare Domain-Methoden, sodass ungültige Zustände ausgeschlossen sind.
+- **Reine Domain-Tests (`:core` `commonTest`)**: Jede fachliche Regel, Invariante und Trendberechnung wird durch schnelle, frameworkfreie Unit-Tests in `:core` abgesichert (ohne DB, HTTP oder UI-Mocks).
 
 ### 2. Kotlin & Multiplatform First
 - **Idiomatisches Kotlin**: Nutze Immutability (`val`, `data class`), `value class` für Domain-Typen, `sealed interface`/`sealed class` für Zustände und Ergebnisse sowie Coroutines/`Flow` für Asynchronität.
